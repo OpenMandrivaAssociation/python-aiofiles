@@ -12,7 +12,7 @@ Source0:        %{url}/archive/v%{version}/%{modname}-%{version}.tar.gz
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(pytest)
-BuildRequires:  python3dist(pytest-asyncio)
+#BuildRequires:  python3dist(pytest-asyncio)
 
 %{?python_provide:%python_provide python3-%{modname}}
 
