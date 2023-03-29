@@ -10,8 +10,12 @@ URL:            https://github.com/Tinche/aiofiles
 Source0:        https://github.com/Tinche/aiofiles/archive/v%{version}/%{modname}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(pytest)
+BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(poetry-core)
+BuildRequires:  python%{pyver}dist(pytest)
+BuildRequires:  python%{pyver}dist(pytoml)
+BuildRequires:  python%{pyver}dist(wheel)
+
 #BuildRequires:  python3dist(pytest-asyncio)
 
 %{?python_provide:%python_provide python3-%{modname}}
