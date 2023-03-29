@@ -1,13 +1,13 @@
 %global modname aiofiles
 
 Name:           python-%{modname}
-Version:        0.6.0
+Version:        23.1.0
 Release:        1
 Summary:        File support for asyncio
 
 License:        ASL 2.0
 URL:            https://github.com/Tinche/aiofiles
-Source0:        %{url}/archive/v%{version}/%{modname}-%{version}.tar.gz
+Source0:        https://github.com/Tinche/aiofiles/archive/v%{version}/%{modname}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
@@ -35,5 +35,5 @@ local disk files in asyncio applications.
 %files
 %license LICENSE
 %doc README.rst
-%{python_sitelib}/%{modname}-*.egg-info/
+%{python_sitelib}/%{modname}-*-info/
 %{python_sitelib}/%{modname}/
