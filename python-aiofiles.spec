@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        23.1.0
-Release:        1
+Release:        2
 Summary:        File support for asyncio
 
 License:        ASL 2.0
