@@ -1,24 +1,20 @@
-%global modname aiofiles
+%global module aiofiles
 
-Name:           python-%{modname}
-Version:        23.1.0
-Release:        2
+Name:           python-%{module}
+Version:        23.2.0
+Release:        1
 Summary:        File support for asyncio
-
 License:        ASL 2.0
 URL:            https://github.com/Tinche/aiofiles
-Source0:        https://github.com/Tinche/aiofiles/archive/v%{version}/%{modname}-%{version}.tar.gz
+Source0:        https://github.com/Tinche/aiofiles/archive/v%{version}/%{module}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python)
-BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(hatchling)
 BuildRequires:  python%{pyver}dist(poetry-core)
 BuildRequires:  python%{pyver}dist(pytest)
 BuildRequires:  python%{pyver}dist(pytoml)
+BuildRequires:  python%{pyver}dist(setuptools)
 BuildRequires:  python%{pyver}dist(wheel)
-
-#BuildRequires:  python3dist(pytest-asyncio)
-
-%{?python_provide:%python_provide python3-%{modname}}
 
 BuildArch:      noarch
 
@@ -26,8 +22,16 @@ BuildArch:      noarch
 aiofiles is an Apache2 licensed library, written in Python, for handling\
 local disk files in asyncio applications.
 
+%files
+%license LICENSE
+%doc README.md
+%{python_sitelib}/%{module}-*-info/
+%{python_sitelib}/%{module}/
+
+#----------------------------------------------------------------------------
+
 %prep
-%autosetup -n %{modname}-%{version} -p1
+%autosetup -p1 -n %{module}-%{version}
 
 %build
 %py_build
@@ -35,9 +39,3 @@ local disk files in asyncio applications.
 %install
 %py_install
 
-
-%files
-%license LICENSE
-%doc README.rst
-%{python_sitelib}/%{modname}-*-info/
-%{python_sitelib}/%{modname}/
