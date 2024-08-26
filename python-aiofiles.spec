@@ -1,7 +1,7 @@
 %global module aiofiles
 
 Name:           python-%{module}
-Version:        23.2.1
+Version:        24.1.0
 Release:        1
 Summary:        File support for asyncio
 License:        ASL 2.0
